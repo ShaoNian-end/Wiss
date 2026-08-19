@@ -31,6 +31,9 @@ jobs:
           echo "$KEYSTORE_BASE64" | base64 -d > ${{ github.workspace }}/wiss.jks
           echo "KEYSTORE_PATH=${{ github.workspace }}/wiss.jks" >> $GITHUB_ENV
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build Release APK
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/wiss.jks
