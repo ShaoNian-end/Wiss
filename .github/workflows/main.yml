@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - 'v*'
+permissions:
+    contents: write    # 允许创建 Release 和上传 APK
+
   workflow_dispatch:
 
 jobs:
